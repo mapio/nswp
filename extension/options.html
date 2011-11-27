@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!--
+ Copyright 2011, Massimo Santini <santini@dsi.unimi.it>
+ 
+ This file is part of "Not So Weak Passwords".
+ 
+ "Not So Weak Passwords" is free software: you can redistribute it and/or modify it
+ under the terms of the GNU General Public License as published by the Free
+ Software Foundation, either version 3 of the License, or (at your option) any
+ later version.
+ 
+ "Not So Weak Passwords" is distributed in the hope that it will be useful, but
+ WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+ FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
+ details.
+ 
+ You should have received a copy of the GNU General Public License along with
+ "Not So Weak Passwords". If not, see <http://www.gnu.org/licenses/>.
+-->
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>nofussbm options</title>
+	<script type="text/javascript">
+		var form;
+		function onload() {
+			form = document.forms.options;
+			form.secret.value = localStorage.getItem( "secret" );
+		}
+		function set() {
+			localStorage.setItem( "secret", form.secret.value );
+		}
+	</script>
+</head>
+<body onload="onload()">
+	<form action="#" method="post" name="options">
+		Enter your secret (master password): <input type="text" name="secret" id="secret" size="128" onchange="set()"><br />
+	</form>
+</body>
+</html>
