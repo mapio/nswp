@@ -1,0 +1,8 @@
+#!/usr/bin/env python
+
+from hashlib import sha1
+from sys import argv
+
+secret = 'this is not a well kept secret'
+
+print sha1( secret + argv[ 1 ] ).hexdigest()[ : 16 ]

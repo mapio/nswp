@@ -2,21 +2,36 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8" />
-	<title>nofussbm options</title>
+	<title>Not-so-weak passwords</title>
+	<script type="text/javascript" src="sha1.js"></script>
 	<script type="text/javascript">
 		var form;
 		function onload() {
-			form = document.forms.options;
-			form.secret.value = localStorage.getItem( "secret" );
+			form = document.forms.password;
 		}
 		function set() {
 			localStorage.setItem( "secret", form.secret.value );
+			form.secret.type = 'password';
+		}
+		function get() {
+			form.secret.value = localStorage.getItem( "secret" );
+			form.secret.type = 'text';
+		}
+		function select() {
+			form.password.focus();
+			form.password.select();
+		}
+		function generate() {
+			form.password.value = Sha1.hash( localStorage.getItem( "secret" ) + form.url.value ).substring( 1, 16 );
+			select();
 		}
 	</script>
 </head>
 <body onload="onload()">
-	<form action="#" method="post" name="options">
-		Enter your secret (master password): <input type="text" name="secret" id="secret" size="128" onchange="set()"><br />
+	<form action="#" method="post" name="password">
+		<input type="password" name="secret" id="secret" size="32" placeholder="Secret">  <input type="button" value="&darr;" onclick="set()"> <input type="button" value="&uarr;" onclick="get()"><br />
+		<input type="url" name="url" id="url" size="32" placeholder="URL" onchange="generate()" autofocus autocapitalize="off">  <input type="button" value="&rarr;" onclick="generate()"><br />
+		<input type="text" name="password" id="password" size="32" onclick="select()"><br />
 	</form>
 </body>
 </html>
