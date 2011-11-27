@@ -1,9 +1,11 @@
 Not So Weak Passwords
 =====================
 
-.. image:: http://api.flattr.com/button/flattr-badge-large.png
+.. |flattr| image:: http://api.flattr.com/button/flattr-badge-large.png
   :alt: Flattr this git repo
   :target: http://flattr.com/thing/442419/No-So-Weak-Passwords
+
+|flattr| 
 
 No So Weak Passwords (nswp) is a very simple Google Chrome extension to generate (not so weak) passwords for the casual web site
 requiring authentication you surf to not so often.
