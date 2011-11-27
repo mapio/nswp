@@ -1,12 +1,11 @@
 Not So Weak Passwords
 =====================
 
-|flattr|
+|s|
 
-.. |flattr| image: http://api.flattr.com/button/flattr-badge-large.png
-  :alternate: Flattr this git repo
+.. |s| image:: http://api.flattr.com/button/flattr-badge-large.png
+  :alt: Flattr this git repo
   :target: https://flattr.com/submit/auto?user_id=mapio&url=https://github.com/mapio/nswp&title=Not%20So%20Weak%20Passwordss&language=en_GB&tags=github&category=software
-
 
 No So Weak Passwords (nswp) is a very simple Google Chrome extension to generate (not so weak) passwords for the casual web site
 requiring authentication you surf to not so often.
@@ -47,3 +46,6 @@ Similarly, one can implement a simple command line tool and use the generated pa
 authentication in general. Have a look to the `alternatives/cli <http://github.com/mapio/nswp/tree/master/alternatives/cli>`_
 directory of this repository for a very simple Python implementation.
 
+
+.. 
+  
