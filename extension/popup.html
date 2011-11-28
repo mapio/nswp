@@ -5,12 +5,13 @@
 	<title>nofussbm popup</title>
 	<script type="text/javascript" src="sha1.js"></script>
 	<script>
-		var form, secret;
+		var form, secret, passes;
 		function onload() {
 			form = document.forms.password;
 			secret = localStorage.getItem( "secret" );
+			passes = localStorage.getItem( "onepass" ) == "true" ? 1 : 10;
 			if ( ! secret ) {
-				alert( "Please set your secret in extension options" );
+				alert( "Please set your secret in extension's options" );
 			}
 			chrome.tabs.getSelected( null, function( tab ) {
 				form.url.value = tab.url.replace( /https?:\/\/(www.)?([^\/]*)(\/.*)?/, '$2' );
@@ -18,7 +19,10 @@
 			} );
 		}
 		function generate() {
-			form.password.value = Sha1.hash( secret + form.url.value ).substring( 1, 16 );
+			password = form.url.value;
+			for ( i = 0; i < passes; i++ )
+				password = Sha1.hash( secret + password  )
+			form.password.value = password.substring( 1, 16 );
 			copy();
 			form.url.select();
 		}

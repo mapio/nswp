@@ -13,10 +13,11 @@ requiring authentication you surf to not so often.
 It is well known that *reusing the same passowrd* on different site is very dangerous, as well as using *weak passwords*; on the
 other hand, is *quite difficult to remember* many different good passwords.
 
-The idea behind this extension is very easy (and not new at all): to **generate** a password concatenate a (*unique* and *strong*)
-**secret**, or "master password", to the web site URL (or something derived from it) and then take the SHA1 of it.
+The idea behind this extension is very easy (and not new at all, see the `similar software`_ section below): to **generate** a
+password concatenate a (*unique* and *strong*) **secret**, or "master password", to the web site URL (or something derived from it)
+and then take the SHA1 of it.
 
-In more detail, once you've set your secret in the extension options, by clicking on the extension icon you get a dialog with two
+In more detail, once you've set your secret in the extension's options, by clicking on the extension icon you get a dialog with two
 fields: the first contains the host portion of the current tab (omitting the 'www.' prefix, if present) and the second one the
 generated password that will be automatically copied to the clipboard. If you want to edit the first field (for instance, to add a
 prefix to identify different accounts), just do it and the password will be automatically re-generated (an copyed to the clipboard).
@@ -28,8 +29,12 @@ The security of this extension depends on several facts:
 
 * the secret is remembered by `Web Storage <http://dev.w3.org/html5/webstorage/>`_, nothing is ever sent over the network: not the
   secret, the visited sites URLs, or passwords; 
+
 * the `SAH1 secure hashing algorithm <http://csrc.nist.gov/groups/ST/toolkit/secure_hashing.html>`_ is NIST approved, the
-  implementation used is the one by `Chris Veness <http://www.movable-type.co.uk/scripts/sha1.html>`_;
+  implementation used is the one by `Chris Veness <http://www.movable-type.co.uk/scripts/sha1.html>`_; thanks to `this advice
+  <https://twitter.com/#!/__eMMe/status/141059942873444352>`_, the hash is applied ten times (unless you set "Use 1-pass only SHA1"
+  in extension's options);
+
 * the code of the extension is very simle, publicily available, and can be inspected (and understood) by anyone with a basic
   undestanding of Javascript and HTML.
 
@@ -47,5 +52,13 @@ authentication in general. Have a look to the `alternatives/cli <http://github.c
 directory of this repository for a very simple Python implementation.
 
 
-.. 
+.. _similar software:
+
+Similar software
+----------------
+
+As I said, the approach is not new at all. Similar (and for many aspect more complete, or better) alternatives are (among others):
+
+* `SuperGenPass <http://supergenpass.com/>`_
+* `Cryptnos <http://www.cryptnos.com/>`_
   

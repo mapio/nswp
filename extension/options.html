@@ -8,15 +8,18 @@
 		function onload() {
 			form = document.forms.options;
 			form.secret.value = localStorage.getItem( "secret" );
+			if (  localStorage.getItem( "onepass" ) == "true" ) form.onepass.checked = true;
 		}
 		function set() {
 			localStorage.setItem( "secret", form.secret.value );
+			localStorage.setItem( "onepass", form.onepass.checked );
 		}
 	</script>
 </head>
 <body onload="onload()">
 	<form action="#" method="post" name="options">
-		Enter your secret (master password): <input type="text" name="secret" id="secret" size="128" onchange="set()"><br />
+		Enter your secret (master password): <input type="text" name="secret" id="secret" size="128" onchange="set()">
+		Use 1-pass only SHA1: <input type="checkbox" name="onepass" id="onepass" onchange="set()">
 	</form>
 </body>
 </html>
