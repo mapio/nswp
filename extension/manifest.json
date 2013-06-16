@@ -1,11 +1,12 @@
 {
   "name": "Not So Weak Passwords",
-  "version": "1.1",
+  "version": "1.2",
+  "manifest_version": 2,
   "description": "Generate password for casual web surfing.",
   "browser_action": {
     "default_icon": "icon19.png",
     "default_title": "NSWP",
-    "popup": "popup.html"
+    "default_popup": "popup.html"
   },
   "icons": {
     "16": "icon16.png",
