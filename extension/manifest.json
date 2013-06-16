@@ -1,6 +1,6 @@
 {
   "name": "Not So Weak Passwords",
-  "version": "1.2",
+  "version": "1.2.1",
   "manifest_version": 2,
   "description": "Generate password for casual web surfing.",
   "browser_action": {

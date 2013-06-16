@@ -1,19 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8" />
-	<title>nofussbm popup</title>
-	<script type="text/javascript" src="sha1.js"></script>
-	<script type="text/javascript" src="popup.js"></script>
-	</head>
-	<body>
-		<form action="#" method="post" name="password">
-			<input type="url" name="url" id="url" size="32"autocapitalize="off">
-			<input type="text" name="password" id="password" size="18">
-		</form>
-	</body>
-</html>
-<!--
+/*
  Copyright 2011, Massimo Santini <santini@dsi.unimi.it>
 
  This file is part of "Not So Weak Passwords".
@@ -30,4 +15,23 @@
 
  You should have received a copy of the GNU General Public License along with
  "Not So Weak Passwords". If not, see <http://www.gnu.org/licenses/>.
--->
+*/
+
+var form;
+
+function onload() {
+	form = document.forms.options;
+	form.secret.value = localStorage.getItem( "secret" );
+	if (  localStorage.getItem( "onepass" ) == "true" ) form.onepass.checked = true;
+}
+
+function set() {
+	localStorage.setItem( "secret", form.secret.value );
+	localStorage.setItem( "onepass", form.onepass.checked );
+}
+
+document.addEventListener( 'DOMContentLoaded', function () {
+	onload();
+	document.getElementById( 'secret' ).addEventListener( 'change', set );
+	document.getElementById( 'onepass' ).addEventListener( 'change', set );
+} );
