@@ -55,7 +55,7 @@ One can implement the same approach (albeit with a less pleasant user
 experience) using a web server and a couple of web pages, that can be
 hence used with **any web browser**, even **mobile** ones. For an
 example of such implementation feel free to use
-<http://santini.dsi.unimi.it/extras/pw/> (on my web site directly –
+<http://santini.di.unimi.it/extras/pw/> (on my web site directly –
 nothing will be ever stored by it), or use the code in
 [alternatives/web](http://github.com/mapio/nswp/tree/master/alternatives/web)
 directory of this repository. In principle, one can develop a
