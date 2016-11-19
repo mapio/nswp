@@ -1,7 +1,9 @@
 Not So Weak Passwords
 =====================
 
-No So Weak Passwords (nswp) is a very simple 
+[![Chrome Web Store](https://img.shields.io/chrome-web-store/d/hflhgljplfoljnanaackikeflkooodfj.svg)]()
+
+No So Weak Passwords (nswp) is a very simple
 [Google Chrome extension](https://chrome.google.com/webstore/detail/not-so-weak-passwords/hflhgljplfoljnanaackikeflkooodfj)
 to generate (not so weak) passwords for the casual web site requiring
 authentication you surf to not so often.
@@ -76,7 +78,3 @@ more complete, or better) alternatives are (among others):
 
 -   [SuperGenPass](http://supergenpass.com/)
 -   [Cryptnos](http://www.cryptnos.com/)
-
-
-
-
