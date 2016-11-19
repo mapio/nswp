@@ -1,7 +1,7 @@
 Not So Weak Passwords
 =====================
 
-[![Chrome Web Store](https://img.shields.io/chrome-web-store/d/hflhgljplfoljnanaackikeflkooodfj.svg)]()
+[![Chrome Web Store](https://img.shields.io/chrome-web-store/d/hflhgljplfoljnanaackikeflkooodfj.svg)](https://chrome.google.com/webstore/detail/not-so-weak-passwords/hflhgljplfoljnanaackikeflkooodfj)
 
 No So Weak Passwords (nswp) is a very simple
 [Google Chrome extension](https://chrome.google.com/webstore/detail/not-so-weak-passwords/hflhgljplfoljnanaackikeflkooodfj)
