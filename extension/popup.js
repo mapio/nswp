@@ -26,10 +26,10 @@ function onload() {
 	if ( ! secret ) {
 		alert( "Please set your secret in extension's options" );
 	}
-	chrome.tabs.getSelected( null, function( tab ) {
-		form.url.value = tab.url.replace( /https?:\/\/(www.)?([^\/]*)(\/.*)?/, '$2' );
+	chrome.tabs.query({'active': true, 'lastFocusedWindow': true}, function (tabs) {
+		form.url.value = tabs[0].url.replace( /https?:\/\/(www.)?([^\/]*)(\/.*)?/, '$2' );
 		generate();
-	} );
+	});
 }
 
 function generate() {
